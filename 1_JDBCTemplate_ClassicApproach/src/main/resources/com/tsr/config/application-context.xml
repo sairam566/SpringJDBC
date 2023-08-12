@@ -17,4 +17,32 @@
 	<bean class="com.tsr.dao.ProductDAO" id="productDAO">
 		<constructor-arg ref="jdbcTemplate"/>
 	</bean>
+	
+	<bean class="com.tsr.dao.ProductDAO2" id="productDAO2">
+		<constructor-arg ref="jdbcTemplate"/>
+	</bean>
+	
+	<bean class="com.tsr.dao.ProductDAO3" id="productDAO3">
+		<constructor-arg ref="jdbcTemplate"/>
+	</bean>
+	
+	<bean class="com.tsr.dao.ProductDAO4" id="productDAO4">
+		<constructor-arg ref="jdbcTemplate"/>
+	</bean>
+	
+	<bean class="com.tsr.dao.ProductDAO5" id="productDAO5">
+		<constructor-arg ref="jdbcTemplate"/>
+	</bean>
+	
+	<bean class="com.tsr.dao.ProductDAO6" id="productDAO6">
+		<constructor-arg ref="jdbcTemplate"/>
+	</bean>
+	
+	<bean class="com.tsr.dao.ProductDAO7" id="productDAO7">
+		<constructor-arg ref="jdbcTemplate"/>
+	</bean>
+	
+	<bean class="com.tsr.dao.ProductDAO8" id="productDAO8">
+		<constructor-arg ref="jdbcTemplate"/>
+	</bean>
 </beans>
