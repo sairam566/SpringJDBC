@@ -22,6 +22,8 @@ public class ProductsDAO {
 	private final String SQL_PRODUCTS_GREATER_THEN_GN_PRICE = "select id, name, price from products where price > ?";
 	private final String SQL_GET_PRODUCTS_BY_PRICE = "select name, price from products where price >= ?";
 	private final String SQL_INSERT_PRODUCT = "insert into PRODUCTS(id, name, price) values(?,?,?)";
+	private final String SQL_UPDATE_PRODUCT = "update PRODUCTS set name=? where id=?";
+	private final String SQL_DELETE_PRODUCT = "delete from PRODUCTS where id=?";
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -86,12 +88,20 @@ public class ProductsDAO {
 		return jdbcTemplate.queryForList(SQL_GET_PRODUCTS_BY_PRICE, price);
 	}
 	/*-----------------------------------------------
-	 * Insert Query
+	 * Insert,Update,Delete Query
 	 * ----------------------------------------------
 	 */
 	
 	public int saveProduct(ProductBO bo) {
 		return jdbcTemplate.update(SQL_INSERT_PRODUCT, bo.getpId(), bo.getpName(), bo.getpPrice());
+	}
+	
+	public int updateProduct(String name,int id) {
+		return jdbcTemplate.update(SQL_UPDATE_PRODUCT,name,id);
+	}
+	
+	public int deleteProduct(int id) {
+		return jdbcTemplate.update(SQL_DELETE_PRODUCT,id);
 	}
 	
 }
